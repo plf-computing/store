@@ -35,5 +35,7 @@ getProducts():Observable<Product[]>{
  getCartItemCount():number{
   return this.cartItems.length
  }
-
+ getCartItems():Product[]{
+  return this.cartItems;
+ }
 }
