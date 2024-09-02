@@ -1,5 +1,5 @@
-<div class="container mt-6 mx-auto">
-    <table class="border border-blue-700 border-collapse w-full">
+<div class="container mt-6 mx-auto" *ngIf="cartItems.length != 0">
+    <table class="border border-blue-700 border-collapse w-full" >
         <thead>
             <tr>
                 <th class="border border-blue-500">Serial No</th>
@@ -11,19 +11,27 @@
             </tr>
         </thead>
         <tbody >
-            <tr >
-                <td class="border border-blue-500">1</td>
-                <td class="border border-blue-500">blah</td>
-                <td class="border border-blue-500"><img src="" alt=""></td>
-                <td class="border border-blue-500">12.22</td>
-                <td class="border border-blue-500">2</td>
-                <td class="border border-blue-500"><button> <i class="fa-solid fa-trash"></i></button></td>
+            <tr *ngFor="let item of cartItems;let i = index" >
+                <td class="border border-blue-500">{{i + 1}}</td>
+                <td class="border border-blue-500">{{item.title}}</td>
+                <td class="border border-blue-500"><img class=" w-[30px] rounded-3xl" [src]="item.image" alt="image product"></td>
+                <td class="border border-blue-500">Kshs. {{item.price}}</td>
+                <td class="border border-blue-500">{{item.quantity}}</td>
+                <td class="border border-blue-500"><button (click)="removeProduct(item)"> <i class="fa-solid fa-trash fa-lg hover:text-blue-400"></i></button></td>
             </tr>
         </tbody>
     </table>
 
     <div class="flex justify-center items-center">
-        <p> <strong>Total Amount: 12</strong></p>
+        <p> <strong>Total Amount: {{totalAmount | number:'1.2-2'}}</strong></p>
+    </div>
+</div>
+
+<div *ngIf="cartItems.length == 0" >
+    <div class="flex flex-col justify-between items-center">
+        <img src="assets/empty.png" alt="">
+        <h2>Your cart is empty</h2>
+        <button class="bg-blue-900 px-4 py-2 text-white rounded-3xl" routerLink="/products" routerLinkActive="active">Shop Now</button>
     </div>
 </div>
 
