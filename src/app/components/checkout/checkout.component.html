@@ -1,0 +1,10 @@
+<div class="container mx-auto mt-4 flex flex-col justify-center items-center">
+    <div>
+        <p class="font-semibold">Total Amount to pay: Ksh {{totalAmount | number:'1.2-2'}}</p>
+        <p class="text-xl text-red-500">Please do not refresh the browser while transaction is underway!!!</p>
+    </div>
+    <ngx-paypal [config]="payPalConfig"></ngx-paypal>
+    <div>
+        <button (click)="cancel()" class="bg-red-700 rounded-3xl text-white px-4 py-2">Cancel</button>
+    </div>
+</div>

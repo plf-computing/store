@@ -25,13 +25,18 @@
     <div class="flex justify-center items-center">
         <p> <strong>Total Amount: {{totalAmount | number:'1.2-2'}}</strong></p>
     </div>
+
+    <div class="flex justify-center mt-4 gap-4">
+        <!-- <button routerLink="/products" class="bg-blue-900 rounded-full text-white px-4 py-2 ">Back</button> -->
+        <button routerLink="/check-out" class="bg-blue-900 rounded-full text-white px-4 py-2 ">Proceed to Checkout</button>
+    </div>
 </div>
 
 <div *ngIf="cartItems.length == 0" >
     <div class="flex flex-col justify-between items-center">
         <img src="assets/empty.png" alt="">
         <h2>Your cart is empty</h2>
-        <button class="bg-blue-900 px-4 py-2 text-white rounded-3xl" routerLink="/products" routerLinkActive="active">Shop Now</button>
+        <button  class="bg-blue-900 px-4 py-2 text-white rounded-3xl" routerLink="" routerLinkActive="active">Shop Now</button>
     </div>
 </div>
 

@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { ProductsComponent } from './components/products/products.component';
 import { CartComponent } from './components/cart/cart.component';
+import { CheckoutComponent } from './components/checkout/checkout.component';
 
 export const routes: Routes = [
     {
@@ -10,12 +11,10 @@ export const routes: Routes = [
         path:'products', component:ProductsComponent
     },
     {
-        path:'cart', component:CartComponent 
-        // loadComponent:() =>
-        //     import('./components/cart/cart.component').then((c)=> c.CartComponent) 
-            
-        
-        
+        path:'cart', component:CartComponent   
+    },
+    {
+        path: 'check-out',component:CheckoutComponent
     }
     
 ];
