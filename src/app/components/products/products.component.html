@@ -6,7 +6,7 @@
 
 <div class="container mx-auto ml-1 mt-4 mr-1">
   <div class="grid md:grid-cols-4 lg::grid-rows-[auto,auto,auto,1fr,auto] gap-4 grid-rows-1 ">
-    <div class="grid grid-rows-subgrid row-span-6 border rounded-lg border-blue-800 shadow-2xl p-4 justify-center items-center"*ngFor="let item of productList">
+    <div class="grid grid-rows-subgrid row-span-6 border rounded-lg  shadow-2xl p-2 justify-center items-center"*ngFor="let item of productList">
       <img class="bg-cover w-[150px] h-[100px] " src="{{item.image}}" alt="">
       <p class="font-bold text-xl">{{item.title}}</p>
       <p class="font-semibold text-lg">{{item.category}}</p>
